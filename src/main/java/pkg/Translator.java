@@ -16,16 +16,13 @@ public class Translator implements Serializable {
 
     private String fortune;
     private String name;
-    private String birthYear;
-    private String shoeSize;
+    private String birthYear = "";
+    private String shoeSize = "";
     private int randomNum;
     private Random random;
+    private int fortuneValue;
 
     public void createFortune() {
-        random = new Random();
-        randomNum = Integer.valueOf(random.nextInt(50));
-
-        int fortuneValue = getNameValue() + Integer.parseInt(shoeSize) / 100 + randomNum;
 
         System.out.println("random " + randomNum + "total " + fortuneValue);
 
@@ -104,6 +101,30 @@ public class Translator implements Serializable {
 
         return nameValue;
 
+    }
+
+    public int getFortuneValue() {
+        return fortuneValue;
+    }
+
+    public void setFortuneValue(int fortuneValue) {
+        this.fortuneValue = fortuneValue;
+    }
+
+    public int getRandomNum() {
+        return randomNum;
+    }
+
+    public void setRandomNum(int randomNum) {
+        this.randomNum = randomNum;
+    }
+
+    public void createRandomNum() {
+        random = new Random();
+        randomNum = Integer.valueOf(random.nextInt(50));
+        int fortuneValue = getNameValue() + Integer.parseInt(shoeSize) / 100 + randomNum;
+
+        createFortune();
     }
 
 }
