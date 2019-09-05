@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Fortune Teller</title>
+    </h:head>
+    <h:body>
+                <f:view>
+            <h:form>
+                Name: <h:inputText value="#{translator.name}"></h:inputText> 
+                <br></br>
+                <br></br>
+                Year of birth: <h:inputText value="#{translator.birthYear}"></h:inputText> 
+                <br></br>
+                <br></br>
+                Shoe size: <h:inputText value="#{translator.shoeSize}"></h:inputText> 
+                <br></br>
+                <br></br>
+                
+                <h:commandButton action="#{translator.createFortune()}" value="Tell my fortune"></h:commandButton>
+                <br></br>
+                <br></br>
+                
+                <h:outputText value="#{translator.fortune}"></h:outputText>
+                
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
